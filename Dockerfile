@@ -7,4 +7,6 @@ RUN pip install  --no-binary pyuwsgi pyuwsgi
 COPY Application/ /app
 WORKDIR /app
 
-CMD ["uwsgi","--http","127.0.0.1:8000","--master","-p","4","-w","app:app"]
+CMD ["uwsgi","--http","0.0.0.0:8543","--master","-p","4","-w","app:app"]
+EXPOSE 8543
+
